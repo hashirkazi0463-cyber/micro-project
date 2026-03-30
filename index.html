@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Urban Basket </title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: lightblue
+        }
+
+        header {
+            background-color: #282da4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-shadow: 10px 10px 10px rgba(37, 35, 35, 0.954);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        header:hover {
+            background-color: #36bfce;
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #1b1f5e;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        nav a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        .banner {
+            color: white;
+            text-align: center;
+            padding: 30px;
+            background-color: #509cb9;
+        }
+
+        .banner h2 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background-color: rgb(150, 228, 238);
+            height: 700px;
+            width: 100%;
+            justify-content:space-between; 
+            align-items: center;      
+            padding-left: 95px;
+         }
+
+
+        .card {
+           padding: 30px;
+            display: block;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: auto;
+            margin-top: 20px;
+            margin-left: 15px;
+            text-align: center;
+            color: rgba(236, 236, 206, 0.804);
+            background-color: #4488b3;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            gap: 10px;
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+            background-color: #666666a0;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.991);
+        }
+
+        .contact {
+            width: 50%;
+            margin: 30px auto;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact h2:hover {
+            color: #d2265f;
+            transform: scale(1.1);
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact input[type="submit"] {
+            background-color: #2e2f7d;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .contact input[type="submit"]:hover {
+            background-color: #1f1b5e;
+        }
+
+        footer {
+            background-color: #2e3a7d;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background-color: #2e3a7d;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            margin: 10px auto;
+        }
+
+        button:hover {
+            background-color: #1f1b5e;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        a:hover {
+            color: yellow;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e3a7d;
+            margin-bottom: 20px;
+
+        }
+
+        .search-box {
+            padding: 5px;
+            margin: 10px;
+            border: none
+        }
+
+        .img {
+            border-radius: 10px;
+            margin-top: 10px;
+            width: 200px;
+            height: 150px;
+            transition: all 0.4s ease;
+        }
+        .img:hover {
+            transform: scale(1.1);
+          
+        }
+
+        .hed {
+            font-family: fantasy;
+            letter-spacing: 3px;
+
+
+        }
+        .big
+        {display: flex;
+        text-align: center;
+    justify-content: center;}
+    .butt
+    {
+        background-color: #38c9baaf;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+        transition: all 0.4s ease;
+    }
+    .butt:hover
+    {
+        transform: scale(1.1);
+    }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <h1 class="hed">Urban Basket </h1>
+        <p>Your Daily Needs at Best Prices</p>
+    </header>
+
+    <nav>
+        <div class="big"><div class="butt"><a href="#home">Home</a></div>
+        <div class="butt"><a href="#products">Products</a></div>
+        <div class="butt"><a href="#contact">Contact Us</a></div>
+        <div class="butt"><a href="#about">About Us</a></div>
+</div>
+
+    </nav>
+
+
+    <div class="banner">
+        <h2 style="color: white;">Welcome to Urban Basket......!!!</h2>
+        <p>Fresh groceries, fruits, vegetables, and more!</p>
+    </div>
+    <section>
+        <a name="products"></a>
+        <h2>Our Products....!!</h2>
+
+    </section>
+    <hr style="width: 100%; margin: 20px auto; border: 1px solid #100f0f;">
+    <input type="text" placeholder="Search Product..." class="search-box">
+
+
+    <div class="container">
+        <div class="card">
+            <a href="https://www.nilons.com/">
+            <img src="https://www.cheesebros.com/cdn/shop/files/deluxe-thanksgiving-1.jpg?v=1762455676"
+                alt="Accompaniments" width="150px" height="150px" class="img">
+</a>
+            <button>Add to Cart</button>
+
+            <p>Accompaniments</p>
+
+
+
+        </div>
+        <div class="card">
+            <a href="https://www.bigbasket.com/pc/beverages/energy-soft-drinks/cold-drinks">
+            <img src="https://www.shutterstock.com/image-photo/poznan-poland-oct-28-2021-260nw-2071581119.jpg"
+                alt="Beverages" width="150px" height="150px" class="img">
+                </a>
+            <button>Add to Cart</button>
+            <p>Beverages</p>
+
+        </div>
+        <div class="card">
+            <a href="https://www.bigbasket.com/pc/sweets-snacks/">
+            <img src="https://media.istockphoto.com/id/1471120019/photo/snack-on-display.jpg?s=612x612&w=0&k=20&c=WO206uu89dhZNZIIAl-Ss40Fv3xX4g5qq2noAY9AgZo="
+                alt="Sweets and Snacks" width="150px" height="150px" class="img">
+                </a>
+            <button>Add to Cart</button>
+            <p>Sweets and Snacks</p>
+
+        </div>
+
+        <div class="card">
+            <a href="https://www.amazon.in/toiletries/s?k=toiletries">
+
+                <img src="https://www.shutterstock.com/image-photo/shaving-foams-gels-arranged-on-260nw-2743082563.jpg"
+                alt="Toiletries" width="150px" height="150px" class="img">
+            </a>
+                <button>Add to Cart</button>
+                <p>Toiletries</p>
+
+
+        </div>
+        <div class="card">
+            <a href="https://www.nilkamalhomes.com/">
+
+                <img src="https://st.depositphotos.com/2075661/3934/i/450/depositphotos_39340013-stock-photo-kitchen-utensils-on-supermarket-shelf.jpg"
+                alt="Household Items" width="150px" height="150px" class="img">
+            </a>
+                <button>Add to Cart</button>
+            <p>Household Items</p>
+
+
+        </div>
+        <div class="card">
+                <a href="https://www.amazon.in/stationery/s?k=stationery">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2024/2/393872854/IG/LO/SQ/66596346/stan.jpg"
+                alt="Stationery" width="150px" height="150px" class="img">
+                </a>
+            <button>Add to Cart</button>
+            <p>Stationery</p>
+
+        </div>
+        <div class="card">
+                <a href="https://www.maxfashion.in/in/en/mens-clothing/sale">
+
+                    <img src="https://images.jdmagicbox.com/quickquotes/images_main/wall-mounted-garment-display-rack-for-supermarket-2220971217-h32um1g5.jpg"
+                    alt=" clothes" width="150px" height="150px" class="img">
+                </a>
+            <button>Add to Cart</button>
+            <p>Clothes</p>
+
+        </div>
+        <div class="card">
+                <a href="https://www.bigbasket.com/pc/fruits-vegetables/">
+            <img src="https://media.istockphoto.com/id/1128687123/photo/shopping-bag-full-of-fresh-vegetables-and-fruits.jpg?s=612x612&w=0&k=20&c=jXInOVcduhEnfuUVffbUacldkF5CwAeThD3MDUXCItM="
+                alt="Fruits and Vegetables" width="150px" height="150px" class="img">
+            </a>
+            <button>Add to Cart</button>
+            <p>Fruits and Vegetables</p>
+
+        </div>
+        <script>
+            document.querySelectorAll('.card button').forEach(button => {
+                button.addEventListener('click', function () {
+                    alert('Item added to cart!');
+                });
+            });
+        </script>
+
+    </div>
+
+
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Enter your name" required>
+            <input type="tel" placeholder="Enter your Number" required>
+
+
+            <textarea rows="4" placeholder="Your message"></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Message sent successfully!');
+                this.reset();
+            });
+        </script>
+    </section>
+
+
+    <address id="about" style="font-size: 20px;">
+        <h2>About Us</h2>
+        <p>Urban Basket is your one-stop online grocery store, offering a wide range of products to meet your daily
+            needs. From fresh produce to household essentials, we are committed to providing quality products at
+            competitive prices. Our mission is to make grocery shopping convenient and accessible for everyone.</p>
+        <p>Founded in 2022, Urban Basket has quickly become a trusted name in the online grocery market. We pride
+            ourselves on our customer-centric approach, ensuring that every shopping experience is seamless and
+            satisfying. With a user-friendly website and a dedicated customer support team, we are here to serve you
+            better.</p>
+        <p>Thank you for choosing Urban Basket. We look forward to serving you and making your shopping experience
+            enjoyable!</p>
+        <footer>
+            <p>&copy; 2026 UrbanBasket| Designed for Hashir Kazi</p>
+
+            |<a href="https://www.blinkit.com/UrbanBasket" target="_blank">blinkit</a> |
+            <a href="https://www.linkedin.com/company/UrbanBasket" target="_blank">LinkedIn</a> |
+        </footer>
+
+</body>
+
+</html>
